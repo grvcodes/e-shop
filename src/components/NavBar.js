@@ -1,10 +1,10 @@
 import React from 'react'
-import pic from '../pic.png';
+import logo from '../logo.svg'
 
 function NavBar(){
     return(
         <header className>
-            <img src ={pic} alt ="logo" />
+            <img src ={logo} alt ="logo" />
             <h1>e-shop</h1>
             <a href ="/cart"><i></i>cart</a>
         </header>

@@ -15,7 +15,7 @@ header{
   font-size: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   text-transform: uppercase;
   color: wheat;
   padding-right: 1em;
@@ -26,7 +26,9 @@ header h1{
 header img{
   height: 80px;
   width: 80px;
-  vertical-align: bottom;
+  margin: 10px 0;
+  border-right: 1px solid wheat;
+  
 }
 header a{
   text-decoration: none;
@@ -40,36 +42,77 @@ header a{
 }
 header a:hover{
   transform: scale(1.2);
-  color: orange;
-  border-color: orange;
+  color: white;
+  border-color: wheat;
   background-color: #282c34;
 }
 .product-page{
-  display: flex;
-  flex: 1 1 200px;
-  flex-wrap: wrap;
-  width: 80vw;
-  margin: 1.5em auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem auto;
+  width: 90vw;
+  padding: 4px 4px;
 }
 .product{
+  width: 1fr;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   margin: 10px 1em;
   padding: .5em .5em .2em;
   border-radius: .5em;
+  font-size:.6rem;
 }
 .product img{
-  height: 120px;
-  width: 120px;
+  height: 150px;
+  width: 150px;
   padding: .5em 1em;
-  border-bottom: 1px solid #2e2e2e;
+  margin: 2rem 1rem;
+  background-blend-mode:;
 }
-.product h3,h4{
-  font-size: 1.5rem;
+.product p{
+  display: none;
+}
+@media(min-width:1000px){
+  .product{
+    display: grid;
+    grid-template-areas: "img details"
+                         "name details"
+                         "buttons buttons";
+    grid-template-columns: 1fr 2fr;
+  }
+  .product img{
+    grid-area: img;
+  }
+  .product h3{
+    grid-area: name;
+  }
+  .product p{
+    grid-area: details;
+    display: block;
+    font-size: 1rem;
+  }
+  .product span{
+    grid-area: buttons;
+  }
+}
+.product h3{font-size: 1.5rem;}
+.product h3,h2{
+  display: inline-block;
   margin: 0;
+}
+.product strong{
+  font-size: 2rem;
+  color: rgb(255, 166, 0);
 }
 .product h4{font-size: .8rem}
 h3.specials{
-  color: #062769;
+  color: #282c34;
+}
+.product span{
+  padding: 2px;
+  display:flex;
+  justify-content: space-between;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
