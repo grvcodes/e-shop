@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 class Product extends Component {
     constructor(props){
         super(props);
-        this.state={
-            displayDetails : (window.outerWidth > 1000) ? true : false
-        }
     }
     render () {
         
@@ -20,7 +17,7 @@ class Product extends Component {
                     <strong>${this.props.details.price}</strong>
                 </section>
                 <p>{this.props.details.info}</p>
-                <span><i>+</i><i>i</i></span>
+                {/* <span><i onClick = {()=>this.props.addToCart(this.props.id)}>+</i><i>i</i></span> */}
             </div>
         )
     }

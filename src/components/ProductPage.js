@@ -1,22 +1,26 @@
 import React,{ Component } from 'react'
 import Product from './Product'
-import { storeProducts } from '../data.js'
+import { Consumer } from './context'
+
+
 class ProductPage extends Component {
-constructor(){
-    super()
-    this.state={
-        products : storeProducts
-    }
-}
+
     render () {
         return (
-            <div className="product-page">
-                {
-                    this.state.products.map(item => {
-                        return <Product details = {item} />
-                        })
-                }
-            </div>
+            <Consumer>
+                {value=>{
+                    console.log(value)
+                    return(
+                    <div className="product-page">
+                    {
+                        value.storeProducts.map(item => {
+                            return <Product id = {item.id} details = {item}  />
+                            })
+                    }
+                    </div>)       
+                }}
+            
+            </Consumer>
         )
     }
 }

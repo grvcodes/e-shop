@@ -68,7 +68,6 @@ header a:hover{
   width: 150px;
   padding: .5em 1em;
   margin: 2rem 1rem;
-  background-blend-mode:;
 }
 .product p{
   display: none;
@@ -87,14 +86,17 @@ header a:hover{
   .product h3{
     grid-area: name;
   }
+ 
   .product p{
     grid-area: details;
     display: block;
     font-size: 1rem;
+    margin: 2rem 1em;
   }
   .product span{
     grid-area: buttons;
   }
+
 }
 .product h3{font-size: 1.5rem;}
 .product h3,h2{
