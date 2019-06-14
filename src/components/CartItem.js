@@ -9,10 +9,11 @@ const CartItem = (props)=>{
                 <h4>{props.data.title}</h4>
             </span>
             <span className="price">
-                <h3>${props.data.price}</h3>
+                <h3>price: <span>${props.data.price}</span></h3>
+                <h3>total price:<span>${props.data.price*props.count}</span></h3>
             </span>
             <span className="wrapper"> 
-                <span>quantity:{props.count}</span> 
+                quantity:{props.count}
                 <button onClick ={()=>props.increment(props.data.id)}><i>increse</i></button>
                 <button onClick ={()=>props.decrement(props.data.id)}><i>decrease</i></button>
             </span>

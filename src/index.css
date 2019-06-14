@@ -143,11 +143,20 @@ h3.specials{
   margin: 10px 0;
   display: flex;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: center;
 }
-.cart-item span.wrapper *{margin-left: 5px;}
+.cart-item span.wrapper *{margin-left: 10px;}
 .cart-photo{
   height: 100px;width: 100px;
+}
+.cart-item h3{
+  font-weight: 100;
+}
+.cart-item h3 span{
+  color: #afb6c5;
+  font-weight: 700;
+
 }
 div.empty-cart{
   height: 100%;
