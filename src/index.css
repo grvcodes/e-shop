@@ -152,9 +152,18 @@ h3.specials{
 div.empty-cart{
   height: 100%;
   width: 70%;
-  font-size: 5em;
+  font-size: 2em;
   text-align: center;
+  margin: auto;
 }
+div.empty-cart a{
+  text-decoration-color: #282c34; 
+  
+}
+div.empty-cart a:hover{
+  color: darkgreen;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

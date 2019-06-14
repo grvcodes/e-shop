@@ -13,7 +13,8 @@ class Cart extends Component{
                      return(
                          <div className ="empty-cart">
                             <p>Your Cart is Empty
-                                <Link to='/'>Start Shopping</Link>                            
+                                <Link to='/'> Start Shopping</Link> 
+                                <span> : ) </span>                          
                              </p>
                          </div>
                      )   
