@@ -28,12 +28,34 @@ export class Provider extends Component{
         this.setState({cart:temp})
         
     }
+    decrement = (id)=>{
+        let temp = []
+        for(let i in this.state.cart){
+            let item = this.state.cart[i];
+            if(item.id == id){
+                
+                if(item.count > 1){
+                    let newData = {id: item.id,count: item.count-1}
+                    temp = [...temp,newData];    
+                }else{
+                    this.state.storeProducts[id-1].inCart=false;
+                    console.log('removed from cart')
+                }
+            }
+            else{
+                temp = [...temp, item]
+            }
+        }
+        this.setState({cart:temp})
+        
+    }
     
     state={
         storeProducts:storeData,
         cart: [],
         addToCart : this.addToCart,
-        increment: this.increment
+        increment: this.increment,
+        decrement: this.decrement
     };
 
     render(){

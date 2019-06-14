@@ -14,6 +14,7 @@ const CartItem = (props)=>{
             <span className="wrapper"> 
                 <span>quantity:{props.count}</span> 
                 <button onClick ={()=>props.increment(props.data.id)}><i>increse</i></button>
+                <button onClick ={()=>props.decrement(props.data.id)}><i>decrease</i></button>
             </span>
         </div>
         )

@@ -26,6 +26,7 @@ class Cart extends Component{
                             return <CartItem data ={data}
                                              count = {item.count}
                                              increment ={value.increment}
+                                             decrement ={value.decrement}
                                     >
                                     </CartItem>
                             })
