@@ -116,6 +116,45 @@ h3.specials{
   display:flex;
   justify-content: space-between;
 }
+.cart-page{
+  width: 100vw;
+  margin: auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cart-item{
+  background-color: white;
+  margin: 2em;
+  padding: 1em .5em;
+  display: grid;
+  grid-template-areas: "spana price"
+                         "spana price"
+                         "wrapper wrapper";
+  
+}
+.cart-item span.a{grid-area: spana}
+.cart-item span.price{grid-area: price}
+.cart-item h4,h5{
+  margin: 0;
+}
+.cart-item span.wrapper{
+  grid-area: wrapper;
+  margin: 10px 0;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.cart-item span.wrapper *{margin-left: 5px;}
+.cart-photo{
+  height: 100px;width: 100px;
+}
+div.empty-cart{
+  height: 100%;
+  width: 70%;
+  font-size: 5em;
+  text-align: center;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -14,7 +14,7 @@ class ProductPage extends Component {
                     <div className="product-page">
                     {
                         value.storeProducts.map(item => {
-                            return <Product id = {item.id} details = {item}  />
+                            return <Product id = {item.id} details = {item} addToCart ={value.addToCart} />
                             })
                     }
                     </div>)       

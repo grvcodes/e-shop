@@ -17,7 +17,12 @@ class Product extends Component {
                     <strong>${this.props.details.price}</strong>
                 </section>
                 <p>{this.props.details.info}</p>
-                {/* <span><i onClick = {()=>this.props.addToCart(this.props.id)}>+</i><i>i</i></span> */}
+           
+                {this.props.details.inCart ? <i>In cart</i> : <span><i onClick = {()=>this.props.addToCart(this.props.id)}>+</i></span> }        
+                
+        
+                    
+
             </div>
         )
     }

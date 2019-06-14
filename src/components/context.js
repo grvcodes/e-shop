@@ -4,14 +4,43 @@ import {storeProducts as storeData}from '../data'
 const Context = React.createContext();
 
 export class Provider extends Component{
+
+    addToCart= (id)=>{
+        let newItem={id : id,
+                  count:1
+                 };
+        let temp = [...this.state.cart,newItem]
+        this.setState({cart : temp})
+        this.state.storeProducts[id-1].inCart=true;
+    }
+    increment = (id)=>{
+        let temp = []
+        for(let i in this.state.cart){
+            let item = this.state.cart[i];
+            if(item.id == id){
+                let newData = {id: item.id,count: item.count+1};
+                temp = [...temp,newData];
+            }
+            else{
+                temp = [...temp, item]
+            }
+        }
+        this.setState({cart:temp})
+        
+    }
+    
     state={
-        storeProducts:storeData
+        storeProducts:storeData,
+        cart: [],
+        addToCart : this.addToCart,
+        increment: this.increment
     };
+
     render(){
         return(
         <Context.Provider 
             value ={{...this.state,
-                     addToCart:this.addToCart
+                     
                     }} 
         >
             {this.props.children}
