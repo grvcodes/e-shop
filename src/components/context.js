@@ -10,8 +10,9 @@ export class Provider extends Component{
                   count:1
                  };
         let temp = [...this.state.cart,newItem]
-        this.setState({cart : temp})
+        this.setState({cart : temp},this.changeTotal)
         this.state.storeProducts[id-1].inCart=true;
+        
     }
     increment = (id)=>{
         let temp = []
@@ -49,10 +50,20 @@ export class Provider extends Component{
         this.setState({cart:temp})
         
     }
-    
+    // changeTotal=()=>{
+    //     let newTotal=0;
+    //     this.state.cart.forEach(i=>{
+    //         console.log(i,this.state.cart,"from change total");
+
+    //         newTotal += this.state.storeProducts[i.id-1].price * i.count;
+              
+    //     });
+    //     this.setState({total: newTotal})
+    // }
     state={
         storeProducts:storeData,
         cart: [],
+        total :0, 
         addToCart : this.addToCart,
         increment: this.increment,
         decrement: this.decrement

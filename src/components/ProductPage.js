@@ -9,7 +9,7 @@ class ProductPage extends Component {
         return (
             <Consumer>
                 {value=>{
-                    console.log(value)
+                    
                     return(
                     <div className="product-page">
                     {

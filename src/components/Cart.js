@@ -4,8 +4,12 @@ import { Consumer } from './context'
 import CartItem from './CartItem'
 
 class Cart extends Component{
+    
+
     render(){
+        
         return (
+            
             <Consumer>
                 {value=>{
                     console.log(value)
@@ -19,22 +23,39 @@ class Cart extends Component{
                          </div>
                      )   
                     }
+                    let total =0;
+                    value.cart.forEach(element => {
+                        total += value.storeProducts[element.id-1].price * element.count;
+                        
+                    });
                     return(
+                    <>
                     <div className="cart-page">
                     {
+                        
                         value.cart.map(item => {
+                            
                             let data = value.storeProducts[item.id-1];
-                            return <CartItem data ={data}
+                            
+                            return (
+                                    <CartItem data ={data}
                                              count = {item.count}
                                              increment ={value.increment}
                                              decrement ={value.decrement}
                                     >
                                     </CartItem>
+                                   )
                             })
                     }
-                    </div>)       
+                    </div>
+                    <div className="cart-page-footer">
+                        <div>
+                            <h3>Cart Total:</h3>
+                            <span>$ {total}</span>
+                        </div>
+                    </div>
+                    </>)       
                 }}
-            
             </Consumer>
         )
     }
