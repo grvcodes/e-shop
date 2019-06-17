@@ -9,6 +9,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+button{
+  background-color: transparent;
+  border: none;
+
+}
 header{
   background-color: #282c34;
   min-height: 10vmin;
@@ -24,27 +29,38 @@ header h1{
   margin-left: 1em;
 }
 header img{
-  height: 80px;
-  width: 80px;
-  margin: 10px 0;
+  height: 30px;
+  width: 30px;
+  margin:0 .4em 0 0;
+}
+header img.icon{
+  height: 50px;
+  width: 50px;
+  margin: 10px 10px 0 0;
   border-right: 1px solid wheat;
-  
+  padding: 5px 10px 10px;
 }
 header a{
   text-decoration: none;
   margin-left: auto;
   padding: .5em;
   background-color: white;
-  color: #282c34;
-  border: 1px solid #282c34;
+  color: #d8c410;
+  font-weight: 500;
+  border: 1px solid #dfb914;
   border-radius: .5em;
+  transform: scale(.9);
   transition: all 200ms ease;
 }
 header a:hover{
-  transform: scale(1.2);
+  transform: scale(1);
   color: white;
   border-color: wheat;
   background-color: #282c34;
+}
+img.currency{
+  height: 1rem;
+  width: 1rem;
 }
 .product-page{
   display: grid;
@@ -57,6 +73,7 @@ header a:hover{
   width: 1fr;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   background-color: white;
   margin: 10px 1em;
   padding: .5em .5em .2em;
@@ -71,6 +88,12 @@ header a:hover{
 }
 .product p{
   display: none;
+}
+.product .product-bottom img{
+  height: 20px;
+  width: 20px;
+  padding: .5em;
+  margin: .5em;
 }
 @media(min-width:1000px){
   .product{
@@ -128,13 +151,17 @@ h3.specials{
   margin: 2em;
   padding: 1em .5em;
   display: grid;
-  grid-template-areas: "spana price"
-                         "spana price"
-                         "wrapper wrapper";
+  grid-template-areas: "spana   price"
+                       "spana   price"
+                       "wrapper wrapper";
   
 }
 .cart-item span.a{grid-area: spana}
-.cart-item span.price{grid-area: price}
+.cart-item span.price{
+  grid-area: price;
+  display: flex;
+  flex-direction: column;
+}
 .cart-item h4,h5{
   margin: 0;
 }
@@ -156,6 +183,13 @@ h3.specials{
 .cart-item h3 span{
   color: #afb6c5;
   font-weight: 700;
+}
+.cart-item .wrapper button img{
+  height: 20px;
+  width: 20px;
+}
+.cart-item .increase{
+  transform: rotate(180deg);
 }
 .cart-page-footer div{
   margin-left: auto; 

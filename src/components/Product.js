@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-
+import addToCart from './icons/svg/add_to_cart.svg'
+import incart from './icons/svg/incart.svg'
 class Product extends Component {
     constructor(props){
         super(props);
     }
     render () {
-        
-        
-    
         return (
             <div className="product">
                 <section>
@@ -17,12 +15,22 @@ class Product extends Component {
                     <strong>${this.props.details.price}</strong>
                 </section>
                 <p>{this.props.details.info}</p>
-           
-                {this.props.details.inCart ? <i>In cart</i> : <span><i onClick = {()=>this.props.addToCart(this.props.id)}>+</i></span> }        
+                <div className="product-bottom">
+                    {this.props.details.inCart ? <span>
+                                                   <span>
+                                                   <img src ={incart} 
+                                                         
+                                                     />   
+                                                   </span>
+                                                  </span> 
+                                               : <span>
+                                                   <img src ={addToCart} 
+                                                        onClick = {()=>this.props.addToCart(this.props.id)} 
+                                                    />
+                                                  </span> 
+                    }        
+                </div>
                 
-        
-                    
-
             </div>
         )
     }

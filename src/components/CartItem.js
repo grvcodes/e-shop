@@ -1,4 +1,7 @@
 import React from 'react'
+import decrease from './icons/svg/decrease.svg'
+import dollar from './icons/svg/dollar.svg'
+
 const CartItem = (props)=>{
     
     return(
@@ -9,13 +12,13 @@ const CartItem = (props)=>{
                 <h4>{props.data.title}</h4>
             </span>
             <span className="price">
-                <h3>price: <span>${props.data.price}</span></h3>
-                <h3>total price:<span>${props.data.price*props.count}</span></h3>
+                <h3>price: <span><img className="currency" src={dollar}></img>{props.data.price}</span></h3>
+                <h3>total price:<span><img className="currency" src={dollar}></img>{props.data.price*props.count}</span></h3>
             </span>
             <span className="wrapper"> 
                 quantity:{props.count}
-                <button onClick ={()=>props.increment(props.data.id)}><i>increse</i></button>
-                <button onClick ={()=>props.decrement(props.data.id)}><i>decrease</i></button>
+                <button onClick ={()=>props.increment(props.data.id)}><img className="increase" src={decrease}></img></button>
+                <button onClick ={()=>props.decrement(props.data.id)}><img src={decrease}></img></button>
             </span>
         </div>
         )
