@@ -58,19 +58,16 @@ header a:hover{
   border-color: wheat;
   background-color: #282c34;
 }
-img.currency{
-  height: 1rem;
-  width: 1rem;
-}
+
 .product-page{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  grid-auto-rows: 1fr;
   margin: 1rem auto;
   width: 90vw;
   padding: 4px 4px;
 }
 .product{
-  width: 1fr;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -78,8 +75,9 @@ img.currency{
   margin: 10px 1em;
   padding: .5em .5em .2em;
   border-radius: .5em;
-  font-size:.6rem;
+  font-size: .6em;
 }
+
 .product img{
   height: 150px;
   width: 150px;
@@ -89,6 +87,13 @@ img.currency{
 .product p{
   display: none;
 }
+.product strong{
+  display: flex;
+  justify-content: flex-start;
+  
+  font-size: 2rem;
+  color: rgb(255, 166, 0);
+}
 .product .product-bottom img{
   height: 20px;
   width: 20px;
@@ -96,6 +101,11 @@ img.currency{
   margin: .5em;
 }
 @media(min-width:1000px){
+  .product-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+  }
   .product{
     display: grid;
     grid-template-areas: "img details"
@@ -119,16 +129,12 @@ img.currency{
   .product span{
     grid-area: buttons;
   }
-
 }
+
 .product h3{font-size: 1.5rem;}
 .product h3,h2{
   display: inline-block;
   margin: 0;
-}
-.product strong{
-  font-size: 2rem;
-  color: rgb(255, 166, 0);
 }
 .product h4{font-size: .8rem}
 h3.specials{
@@ -220,4 +226,11 @@ div.empty-cart a:hover{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.product img.currency{
+  font-size: 1.2rem;
+}
+img.currency{
+  height: 1em;
+  width: 1em;
 }
