@@ -16,10 +16,10 @@ const CartItem = (props)=>{
                 <h3>total price:<span><img className="currency" src={dollar}></img>{props.data.price*props.count}</span></h3>
             </span>
             <span className="wrapper"> 
-                quantity:{props.count}
+                <span>quantity:{props.count}</span>
                 <button onClick ={()=>props.increment(props.data.id)}><img className="increase" src={decrease}></img></button>
                 <button onClick ={()=>props.decrement(props.data.id)}><img src={decrease}></img></button>
-                <button onClick ={()=>props.remove(props.data.id)} className ="remove-button">Remove from cart</button>
+                <button onClick ={()=>props.remove(props.data.id)} className ="remove-button">Remove item</button>
             </span>
         </div>
         )
