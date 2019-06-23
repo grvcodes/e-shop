@@ -50,6 +50,19 @@ export class Provider extends Component{
         this.setState({cart:temp})
         
     }
+    remove = (id)=>{
+        let temp = []
+        for(let i in this.state.cart){
+            let item = this.state.cart[i];
+            if(item.id == id){
+                this.state.storeProducts[id-1].inCart=false;
+            }
+            else{
+                temp = [...temp, item]
+            }
+        }
+        this.setState({cart:temp})
+    }
     // changeTotal=()=>{
     //     let newTotal=0;
     //     this.state.cart.forEach(i=>{
@@ -66,7 +79,8 @@ export class Provider extends Component{
         total :0, 
         addToCart : this.addToCart,
         increment: this.increment,
-        decrement: this.decrement
+        decrement: this.decrement,
+        remove: this.remove
     };
 
     render(){

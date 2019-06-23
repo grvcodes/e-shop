@@ -25,9 +25,7 @@ class Product extends Component {
                 <div className="product-bottom">
                     {this.props.details.inCart ? <span>
                                                    <span>
-                                                   <img src ={incart} 
-                                                         
-                                                     />   
+                                                   <img src ={incart} />   
                                                    </span>
                                                   </span> 
                                                : <span>

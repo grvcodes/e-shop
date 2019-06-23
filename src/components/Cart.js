@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import { Consumer } from './context'
 import CartItem from './CartItem'
+import dollar from './icons/svg/dollar.svg'
 
 class Cart extends Component{
     
@@ -17,7 +18,8 @@ class Cart extends Component{
                      return(
                          <div className ="empty-cart">
                             <p>Your Cart is Empty
-                                <Link to='/'> Start Shopping</Link> 
+                                <Link to='/'> Start Shopping </Link>
+                                <br /> 
                                 <span> : ) </span>                          
                              </p>
                          </div>
@@ -42,20 +44,24 @@ class Cart extends Component{
                                              count = {item.count}
                                              increment ={value.increment}
                                              decrement ={value.decrement}
+                                             remove ={value.remove}
                                     >
                                     </CartItem>
                                    )
-                            })
-                    }
+                            })}
                     </div>
                     <div className="cart-page-footer">
-                        <div>
-                            <h3>Cart Total:</h3>
-                            <span>$ {total}</span>
-                        </div>
+                            <div>
+                                <h3>Cart Total:</h3>
+                                <span><img className="currency" src={dollar}></img> {total}</span>
+                                <br />
+                                <button className="danger">Clear Cart</button>
+                                <button>Check out</button>
+                            </div>
                     </div>
-                    </>)       
+                    </>)
                 }}
+                
             </Consumer>
         )
     }

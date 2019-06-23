@@ -6,7 +6,7 @@ const CartItem = (props)=>{
     
     return(
         <div className='cart-item'>
-        
+
             <span className="a">
                 <img className="cart-photo" src = {props.data.img} alt="product" />
                 <h4>{props.data.title}</h4>
@@ -19,6 +19,7 @@ const CartItem = (props)=>{
                 quantity:{props.count}
                 <button onClick ={()=>props.increment(props.data.id)}><img className="increase" src={decrease}></img></button>
                 <button onClick ={()=>props.decrement(props.data.id)}><img src={decrease}></img></button>
+                <button onClick ={()=>props.remove(props.data.id)} className ="remove-button">Remove from cart</button>
             </span>
         </div>
         )
